@@ -37,9 +37,18 @@ public class FilmeAdapter extends RecyclerView.Adapter<FilmeAdapter.FilmeViewHol
     }
     @Override
     public void onBindViewHolder(FilmeViewHolder holder, int position) {
-        Filme filme = this.filmes.get(position);
+        final Filme filme = this.filmes.get(position);
         holder.imgFilme.setImageResource(filme.getImagem());
         holder.txtNome.setText(filme.getNome());
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(FilmeAdapter.this.context, FilmeActivity.class);
+                it.putExtra("filmes", filme);
+                FilmeAdapter.this.context.startActivity(it);
+            }
+        });
     }
 
     @Override

@@ -1,16 +1,18 @@
 package br.com.fiap.exercicios.recyclerview.rm75865;
 
+import java.io.Serializable;
+
 /**
  * Created by logonrm on 04/04/2017.
  */
 
-public class Filme {
+public class Filme implements Serializable{
 
     private String nome;
     private int imagem;
-    private String descricao;
+    private int descricao;
 
-    public Filme(String nome, int imagem, String descricao) {
+    public Filme(String nome, int imagem, int descricao) {
         this.nome = nome;
         this.imagem = imagem;
         this.descricao = descricao;
@@ -32,11 +34,11 @@ public class Filme {
         this.imagem = imagem;
     }
 
-    public String getDescricao() {
+    public int getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public void setDescricao(int descricao) {
         this.descricao = descricao;
     }
 }
